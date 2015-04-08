@@ -91,6 +91,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 @property (nonatomic) AVCaptureDeviceInput *videoDeviceInput;
 @property (nonatomic) AVCaptureMovieFileOutput *movieFileOutput;
 @property (nonatomic) AVCaptureStillImageOutput *stillImageOutput;
+@property (weak, nonatomic) IBOutlet UIButton *switchCamButton;
 
 // Utilities.
 @property (nonatomic) UIBackgroundTaskIdentifier backgroundRecordingID;
@@ -222,6 +223,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     }];
     
     effectiveScale = 1.0;
+    self.switchCamButton.alpha=0.5;
 }
 
 - (void)viewWillAppear:(BOOL)animated
